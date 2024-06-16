@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bill Generator Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+            width: calc(100% - 10px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 150px;
+            margin: 0 auto;
+            padding: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #42b34b;
+            color: rgb(255, 252, 252);
+            cursor: pointer;
+            font-weight: bolder;
+        }
+        input[type="reset"]{
+            display: inline;
+            width: 100px;
+            margin: 0 auto;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #443825;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="reset"]:hover{
+            background-color:rgb(105, 72, 28);
+        }
+
+        input[type="submit"]:hover{
+            background-color:rgb(15, 204, 141);
+        }
+    </style>
+     <link rel="stylesheet" href="house.css">
+     <script>
+        function calculateTotalAmount() {
+            var totalMilk = parseFloat(document.getElementById('total_milk').value);
+            var rate = parseFloat(document.getElementById('rate').value);
+            var productPrice = parseFloat(document.getElementById('product_price').value) || 0;
+            var totalAmount = totalMilk * rate + productPrice;
+            document.getElementById('total_amount').value = totalAmount.toFixed(2);
+        }
+
+        function updateBalance() {
+            var totalAmount = parseFloat(document.getElementById('total_amount').value);
+            var paid = parseFloat(document.getElementById('paid').value) || 0;
+            var balance = totalAmount - paid;
+            document.getElementById('balance').value = balance.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <header>
+
+    <nav>
+        <ul>
+            <li><a class="green" href="house.html"><b>Home</b></a></li>
+            <li><a class="blue" href="adddetails.html"><b>Add Customer</b></a></li>
+            <li><a class="yellow" href="showhistory.php"><b>Display Data</b></a></li>
+            <li><a class="voilet" href="showhistory.html"><b>Search Customer</b></a></li>
+            <li><a class="orange" href="billsearch.php"><b>Billing</b></a></li>
+         </ul>
+        </nav>
+        <div class="logout">
+                <form action="login.html">
+                <button type="submit" href="login.html" class="red">Logout</button></form>
+            </div>
+    </header>
+    <h2>Add Customer Form</h2>
+    <form action="adddetails.php" method="get">
+        <table>
+            <tr>
+                <td><label for="name">Name:</label></td>
+                <td><input type="text" id="name" name="t1" required></td>
+            </tr>
+            <tr>
+                <td><label for="name">Month:</label></td>
+                <td><input type="month" id="month" name="t11" required></td>
+            </tr>
+            <tr>
+                <td><label for="line">Line:</label></td>
+                <td><input type="text" id="line" name="t2" required></td>
+            </tr>
+            <tr>
+                <td><label for="phone">Phone:</label></td>
+                <td><input type="text" id="phone" name="t9"></td>
+            </tr>
+            <tr>
+                <td><label for="date">Date:</label></td>
+                <td><input type="date" format="dd/mm/yyyy" id="date" name="t10" required></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td><label for="total_milk">Total Milk:</label></td>
+                <td><input type="number" id="total_milk" name="t3" step="0.01" oninput="calculateTotalAmount()"></td>
+            </tr>
+            <tr>
+                <td><label for="rate">Rate:</label></td>
+                <td><input type="number" id="rate" name="t4" step="0.01" oninput="calculateTotalAmount()"></td>
+            </tr>
+            <tr>
+                <td><label for="total_amount">Total Amount:</label></td>
+                <td><input type="text" id="total_amount" name="t5" readonly></td>
+            </tr>
+            <tr>
+                <td><label for="product_price">Price of Products:</label></td>
+                <td><input type="number" id="product_price" name="t6" step="0.01" oninput="calculateTotalAmount()"></td>
+            </tr>
+
+            <tr>
+                <td><label for="paid">Paid:</label></td>
+                <td><input type="number" id="paid" name="t8" step="0.01" oninput="updateBalance()"></td>
+            </tr>
+
+            <tr>
+                <td><label for="balance">Balance Amount:</label></td>
+                <td><input type="text" id="balance" name="t7" readonly></td>
+            </tr>
+            
+        </table>
+        <input type="submit" name="submit" value="Add Customer"><input type="reset" name="reset" value="reset">
+    </form>
+
+   
+</body>
+</html>

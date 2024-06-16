@@ -1,0 +1,114 @@
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #5e5454;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container styles */
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 300px;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styles */
+label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Input styles */
+input[type="text"],
+input[type="month"],
+input[type="submit"],
+input[type="reset"] {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="submit"] {
+    background-color: #dba510;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+}
+input[type="reset"] {
+    background-color: #10db4d;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    padding: 10px;
+
+}
+input[type="submit"]:hover {
+    background-color: #bbff00;
+    color: red;
+}
+input[type="reset"]:hover {
+    background-color: #117e23;
+    color: red;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}
+
+
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 50px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #e90808;
+    color: #fff;
+    border-radius: 5px;
+}
+/* Additional CSS for responsiveness and button shadows */
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}
+
+/* Shadow effect for buttons */
+input[type="submit"],
+input[type="reset"] {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add shadow effect to buttons */
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Enhance shadow effect on hover */
+}

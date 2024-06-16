@@ -1,0 +1,176 @@
+*{
+    margin: 5px;
+}
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.logo h1 {
+    color: crimson;
+    font-size: 50px;
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 50px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #e90808;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.logout button,
+nav ul li a {
+    padding: 10px 20px;
+    background-color: #fd0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add transition effect */
+}
+
+.logout button:hover,
+nav ul li a:hover {
+    background-color: #cc0000; /* Change background color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Enhance shadow effect on hover */
+}
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.image-container {
+    margin: 10px;
+}
+
+.image-container img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.green{
+    background-color: #08e92d;
+}
+
+.blue{
+    background-color: #00c0da;
+}
+
+
+.yellow{
+    background-color: #900add;
+   
+}
+
+.orange{
+    background-color: #c90c2c;
+   
+}
+
+.i{
+    width:30%;
+}
+.green:hover{
+    background-color: #6ac72d;
+}
+.blue:hover{
+    background-color: #025d69;
+}
+
+
+.yellow:hover{
+    background-color: #360255;
+   
+}
+
+.orange:hover{
+    background-color: #f82d4f;
+   
+}
+.red:hover{
+    background-color: #850128;
+}
+.voilet{
+    background-color: #09c596;
+}
+.voilet:hover{
+    background-color: aqua;
+}
+.brown{
+    background-color: rgb(175, 56, 56);
+    color: rgb(255, 255, 0);
+}
+.grey{
+    background-color: rgb(84, 90, 90);
+    color: rgb(255, 251, 0);
+}
+
+.brown:hover{
+    background-color: #360255;
+}
+.grey:hover{
+    background-color: black;
+}
+
+@media screen and (max-width: 768px) {
+    .logo h1 {
+        font-size: 40px; /* Adjust font size for smaller screens */
+    }
+
+    nav ul li {
+        margin-right: 20px; /* Adjust margin for smaller screens */
+    }
+
+    nav ul li a {
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+    }
+
+    .image-container img {
+        width: 100%; /* Make image responsive */
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo h1 {
+        font-size: 30px; /* Further adjust font size for very small screens */
+    }
+
+    nav ul li {
+        margin-right: 10px; /* Further adjust margin for very small screens */
+    }
+
+    nav ul li a {
+        padding: 6px 12px; /* Further adjust padding for very small screens */
+    }
+}
